@@ -1,0 +1,207 @@
+{
+  "id": "e81f28a3-ee50-4c36-aee7-1eefa26bc00c",
+  "version": "2.0",
+  "name": "SubscribeRuLab",
+  "url": "https://subscribe.ru/",
+  "tests": [{
+    "id": "512229ae-c332-4bc0-a401-3c7fce8dabe1",
+    "name": "TS_Search_Positive",
+    "commands": [{
+      "id": "5572001c-fe41-4c82-bd08-a795551c1cfa",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "36d7949c-ad66-47de-83f4-dfc4b5e1a903",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0da83faf-fc82-4b5a-9656-266293b6e273",
+      "comment": "",
+      "command": "click",
+      "target": "//a[contains(@class, 'usermenu_link-2')]",
+      "targets": [
+        ["css=.usermenu_link-2", "css:finder"],
+        ["xpath=//div[@id='all']/header/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '')])[8]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "36f7f10c-5251-43b4-b956-1024eb490130",
+      "comment": "",
+      "command": "type",
+      "target": "//input[@name='q']",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.search-input > input", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//div[@id='all']/header/div[3]/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "здоровье"
+    }, {
+      "id": "e2bdee55-98d1-468e-a0ed-c3bb3885e309",
+      "comment": "",
+      "command": "click",
+      "target": "//input[@type='submit'][@value='Найти']",
+      "targets": [
+        ["css=.search-submit", "css:finder"],
+        ["xpath=//input[@value='Найти']", "xpath:attributes"],
+        ["xpath=//div[@id='all']/header/div[3]/form/input[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/form/input[2]", "xpath:position"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win5094",
+      "windowTimeout": 2000
+    }, {
+      "id": "eb65f5d5-af1c-471c-94e9-4d413b2f7b95",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win5094}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ab9281ba-2f27-4b38-bef5-a238984f4c62",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//div[@id='search']",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "bf6ddf1a-952c-479b-8b19-f05d8941d613",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a4dc9241-9282-467e-9d71-a6c9da491176",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href.includes(\"google.ru/search\")",
+      "targets": [],
+      "value": "isGoogleUrl"
+    }, {
+      "id": "624eb2ff-d667-4933-a041-daf3a316a57e",
+      "comment": "",
+      "command": "echo",
+      "target": "Is Google URL: ${isGoogleUrl}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5fe72f71-99f0-42cf-8d5d-c32b73a7099e",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "здоровье site:/subscribe.ru/ - Google Zoeken",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8bebe9ae-e41f-4867-80a9-0e2068defb51",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "//div[@id='search']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67a2ce07-d68a-4acb-b0b4-24507f667698",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "07135feb-232a-47e4-8974-a6248b60ad20",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "4c59e606-98fe-449f-939e-d231d1cafa30",
+    "name": "TS_View_Subscription_Details",
+    "commands": [{
+      "id": "a2dee118-fcf0-4f38-abc0-880e5139ac75",
+      "comment": "",
+      "command": "open",
+      "target": "https://subscribe.ru/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "672af8fc-5e8b-4f17-9d38-7bcfeb5e2d23",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd58f03c-e1b5-4ee9-b536-0b56cbd1af1f",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "//a[contains(@class,'article_title')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "1ab6e6a8-2342-40af-8e34-c561531625d6",
+      "comment": "",
+      "command": "click",
+      "target": "//a[@href='/digest/auto']",
+      "targets": [
+        ["css=.leftmenu .leftmenu_icon-auto", "css:finder"],
+        ["xpath=//div[@id='all']/div[4]/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "075060d4-dc01-49cd-b7c6-f38a91fe4c48",
+      "comment": "",
+      "command": "click",
+      "target": "(//a[contains(@class,'article_title')])[1]",
+      "targets": [
+        ["css=.article-max h3", "css:finder"],
+        ["xpath=//div[@id='all']/section/div[4]/div/div/div/div[2]/a/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Как проверять и оплачивать автомобильные штрафы?')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a914f7e5-b28e-40c7-a4ac-61b3183dbab7",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "//h2",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "3587f4cb-fccf-4b83-a0be-7c714d3fa63d",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "//div[contains(@id,'articletext')] ",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5db831b4-dff1-4465-8713-78382727f102",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1066526a-48c9-416e-b2d7-608c547e77bc",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["512229ae-c332-4bc0-a401-3c7fce8dabe1"]
+  }],
+  "urls": ["https://subscribe.ru/"],
+  "plugins": []
+}
